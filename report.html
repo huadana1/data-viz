@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Dana Hua</strong> — <em>danahua@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Exclusionary Zoning</h2>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<b><li>How does changing the zoning of a community affect the demographics of the people living there? Will there be mass migration of a certain group if zoning laws changed and another group of people moved in? What are these groups? What are the implications of the new demographic landscape of the community on schools, jobs, public policy, etc?</li></b>
+					<ul>
+						<li>Motivation: In "Living Little", one of the options for increasing housing supply is single family home conversions. In this case, people living in single family homes will have neighbors living in small housing. These groups of people will most likely have different demographics. In the hisotrical past and from my own lived experiences, when one demographic moves into an area, another demographic moves out such as during gentrification of a community or white flight. One such example in Boston is the Great Migration where Black southerners moved northwards.</li>
+					</ul>
+				<b><li>Are there any geographical patterns to the zoning classifications today that we can attribute to events/themes in history? Do certain areas have more single family zoning than others because of what that area was used for or close to in the past? What exclusionary themes do these patterns imply?</li></b>
+					<ul>
+						<li>Motivation: Boston is a very old city and has gone through a lot of social and geographical changes. Exclusionary by Design argues zoning was used to exclude groups, especially during the Big Downzone in the 1970s.I wonder if the effects are still relevant today and if so, then how far into the future do we need to think about when designing public policies?</li>
+					</ul>
+				<b><li>Does having a single family zoning area affect the zoning of the nearby areas? What types of zoning surround a single family zoning area? How large is the difference in socioeconomic status/race between the two sides of the boundary?</li></b>
+					<ul>
+						<li>Motivation: Exclusionary By Design argues that zoning is by definition a form of legal separation. However, to have separation, there must be a boundary and there must be something on the other side of the boundary that is different. I've heard a lot about the "rich side of town" and the "poor side of town" from many of my friends and wonder how that applies to zoning.</li>
+					</ul>
+				<b><li>Does public policy force necessary upzoning changes on a community or cause further restrictions and segregation as loopholes are found?</li></b>
+					<ul>
+						<li>Motivation: Exclusionary by Design talks about the MBTA Communities Upzoning law that mandates areas served by the MBTA zone a reasonable area for multifamily housing. However, are areas really being upzoned or will new lines just be built in areas that are already upzoned, making it even harder for marginalized communities to have reliable transit to where they need to go? In high school, I remember learning about the congressional district lines in California being gerrymandered so that Beverly Hills is in a wealthier district overall even though all the cities around it are in a different district. In this, public policy causes further segregation.</li>
+					</ul>
+			</ol>
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure>
+				<img src="Percent Single Family Zone and MBTA.png" alt="" width="100%"/>
+				<figcaption>
+				I honestly don't know much about Metro Boston's municipalities in regards to zoning, demographics, and MBTA communities, so I wasn't sure how to perform data quality checks except by starting with the big picture. This figure uses 5 distinct color steps to show the percentage of single family zone per municipality. It also uses positional colored markers to indicate if a municipality is a MBTA community or not. Some interesting things to note here is Boston is <i>not</i> considred an MBTA community (despite obviously being a central MBTA hub), and that the percentage of single family zones seems to have no impact on whether the municipality is actually an MBTA community as shown by Bolton (which <i>is not</i> an MBTA community) and Duxbury (which <i>is</i> an MBTA community). 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="MBTA Rapid Transit.PNG" alt="" width="100%"/>
+				<figcaption>
+				The previous observations and map led me to research more about exactly what the MBTA communities are and why there still MBTA communities with 100% single family zoning like Duxbury despite the MBTA Communities Upzoning law being active. It turns out that the MBTA Communities Upzoning law set a deadline for municipalities to finish upzoning and only the deadline for the MBTA Rapid Transit Communities (all of which shown above) has passed which is why none of the municipalities shown above have 100% single family zoning, but the communities in Figure 1 do. Additionally, Boston is exempted from the Zoning Act which may be why it appears to not be an MBTA community in Figure 1. Also, somewhat surprisingly, the percent of households that were family households versus non-family households did not seem to be affected by the percent of single family zoning in an area nor it's status as an MBTA rapid transit community. However, it does seem like Milton was probably upzoned by the Zone Act based on it's still high percentage of single family zoning.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Median Income vs Percent Single Family Zone.PNG" alt="" width="100%" />
+				<figcaption>
+				Moving on from the MBTA, I computed the estimated median income of each municipality with the following weighted average formula and plotted it against the percent of single family zoning in a municipality: <i>([Incu10]*5 + [Inc1015]*12.5 + [Inc1520]*17.5 + [Inc2025]*22.5 + [Inc2530]*27.5 + [Inc3035]*32.5 + [Inc3540]*37.5 + [Inc4045]*42.5 + [Inc4550]*47.5 + [Inc5060]*55 + [Inc6075]*67.5) / ([Incu10] + [Inc1015] + [Inc1520] + [Inc2025] + [Inc2530] + [Inc3035] + [Inc3540] + [Inc4045] + [Inc4550] + [Inc5060] + [Inc6075])</i>. Some outliers/poor data quality can be seen with the teal circles around the 0% and 98% single family zone markers and the red circle at the 0% single family zone marker. Although the teal circles around the 0% marker make sense to me, the teal ones at the 98% marker and the red one at the 0% marker do not seem to fit the general pattern of higher income with higher single family zoning percentage. From Figure 1, I also knew Pembroke in the far upper right corner had neighboring municipalities with a low percentage of single family zoning so I wanted to see how their incomes compared, leading to my next figure.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Median Income By Municipality.PNG" alt="" width="100%"/>
+				<figcaption>
+				In this figure, the colors represent the single family zone percentage (similar to Figure 1) and the label numbers represent the estimated median income (as discussed in Figure 3). I first examined Pembroke and its surrounding area and was surprised to see the red municipalities near Pembroke having median incomes much more comparable to the yellow areas than Pembroke. This is vastly different from Sudbury whose surrounding areas seem to follow a general trend of higher income to higher percentage single family zone. These observations may be due to more poor quality data, an error in my estimated median income formula, a lack of any actual correlation between single family zoning percentage and median income, or any combination of such things. 
+				</figcaption>
+			</figure>
+
+
+			<figure>
+				<img src="Population Age Ranges.PNG" alt="" width="100%"/>
+				<figcaption>
+				Moving on, I looked at the population age ranges of the municipalities compared to the percentage of single family zones. I found no noticeable patterns, observations, or outliers with this data except that there seems to be quite a large amount of 18-64 year olds in the Metro Boston area. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Percent Race Other Than White by Municipality.PNG" alt="" width="100%"/>
+				<figcaption>
+				In this figure, I looked at the percentage of races other than Non-Hispanic White in each municipality. I calculated the percentages with the following formula: <i>100-(([Nhwhi])/([Nhwhi]+[Nhaa]+[Nhna]+[Nhas]+[Nhpi]+[Nhoth]+[Nhmlt]+[Lat])*100)</i>. I initally noticed that both large and small Non-Hispanic White populations spanned all across the range of single family zoning percentages. I also noticed that many of the municipalities around each other had similar percentages with only a few exceptions. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Race by Municipality.PNG" alt="" width="100%"/>
+				<figcaption>
+				For a more granular investigation into the racial makeup of the municipalities, I looked at the percentage of each race as a pie chart and compared each municipality's racial makeup to the surrounding municipalities' makeups as well as the percentage of single family zoning in the municipalities. I also annotated the municipalities with the largest and smallest percentage of races other than Non-Hispanic White for both single family zoning percentages close to 0 and 100. I was not surprised to find that the racial profiles of the municipalities with the larger percentage of races other than Non-Hispanic White to be quite different (ex. Randolph with its heavy black population and Chelsea with its heavy Hispanic/Latino population). Beyond that, I was also surprised to see a large grouping of Asians in the center and top left of the map, particularly where there was a high percentage of single family zoning, while in the areas with low percentages of single family zoning, there was a lot more Hispanic, Latino, and Black populations.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="side by side race.PNG" alt="" width="100%"/>
+				<figcaption>
+				This is a side by side comparison of Figures 6 and 7 that makes matching the pie charts to the percentage values a lot easier. Using this, we can quickly use both the colored pie charts and percentage values to see that the areas with the largest non-white populations seem to revolve around the Boston area which is also the MBTA Rapid Transit communities area. It is also interesting to then notice on the pie charts that the areas with larger non-white populations also seems to be grouped by race such that municipalities closer to each other have more of the same race. 
+				</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>Without any temporal data in this dataset, it was difficult to answer many of my initial questions relating to causation and history. However, from a mix of Google, Figure 1, and Figures 6-8, it is evident that exclusionary zoning is present, especially during the Big Downzone of the 1970s and 80s that targeted Black and Hispanic/Latino communities for downzoning. There also seems to be a correlation between median income of a municipality and the percentage of single family zones, although it is not always a strong correlation. Additionally, the MBTA Rapid Transit communities are the only communities so far that have been required to upzone so there are still quite a few municipalities with 100% single family zones. A more thorough and deeper analysis could be done if the dataset included temporal data, more granular income data, and recent zoning changes and if I knew more about zoning, particularly in the Metro Boston area.</p>
+		</section>
+	</main>
+</body>
+</html>
