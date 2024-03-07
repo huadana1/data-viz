@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 4</small>
+			Persuasive or Deceptive Visualization?
+		</h1>
+
+		<p>
+			<strong>Dana Hua</strong> — <em>danahua@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+    <h2>Proposition: The majority political party of a state has no effect on abortion within the state.</h2>
+
+		<section>
+      <h3>FOR the Proposition</h3>
+
+      <figure>
+			<img src="AntiCorrelationAnnotated.PNG" alt="" width="100%"/>
+			<figcaption>
+				There is no clear correlation between state senate party and % change in abortion rate or % change in the number of abortion clinics from 2017-2020. Each quadrant is annotated with the amount of Democratic and Republican states in that quadrant (states on the axes are excluded). The amount of Democratic and Republican states in each quadrant is comparable. 
+			</figcaption>
+		</figure>	
+
+		<p>
+			Design Decisions and Rationale:
+		</p>
+
+		<ul>
+			<li>Added political party as a dimension to the data</li>
+				<ul>
+					<li>
+						Score: 1
+					</li>
+					<li>
+						I couldn't discover a proposition where I could effectively argue both sides with just the abortion data. The numbers made too much sense when looking at strictly states as the dimension. Adding in political party to the dataset made it more versatile. 
+					</li>
+				</ul>
+			<li>Red and Blue Colored Markers</li>
+				<ul>
+					<li>
+						Score: -1
+					</li>
+					<li>
+						Adding in the blue and red colored markers for the Democratic and Republican states made the focus of the visualization on the state political party rather than what the state itself is. If the focus was on the states, it would've been harder to convince the viewer that the percentage change in abortion rate and abortion clinics was actually significant since some states (ex. California) already had a high amount of abortion clinics/abortion rate before 2017, so the percentage change would not be as large as a state that did not already have a lot of abortions or clinics. 
+					</li>
+				</ul>
+			<li>Removed Republican State Outliers</li>
+				<ul>
+					<li>
+						Score: -1
+					</li>
+					<li>
+						I removed some states that were genuinely outliers with 100% change in the number of abortion clinics or change in abortion rates. However, when I removed the genuine outliers, there were still some Republican states that were  far enough down the y-axis to draw the viewer's attention. These states would've showed that Republican states have less support for abortion, so I excluded them from the graph. With them excluded, the focus is on the scattering of blue and red in the center that, on initial inspection, do not seem to have a discernible pattern.
+					</li>
+				</ul>
+			<li>Annotations</li>
+				<ul>
+					<li>Score: -2</li>
+					<li>The annotations were intended to provide a quick results summary to the viewer so that they won't look too closely at the locations of dots within the quadrant itself or the amount of dots presented. (The caption very carefully never mentions how many states are shown or what states are excluded, just that the states on the axes are not counted, so the numbers do not need to add up to 50 exactly). Somewhat fortunately, the 1st and 3rd quadrants both happen to have more democratic states than republican states. These are labeled with more support for abortion and less support for abortion respectively to show that democratic states seem to not have a preference for more or less just based on political party alone.</li>
+				</ul>
+		</ul>
+    </section>
+
+    <section>
+      	<h3>AGAINST the Proposition</h3>
+
+      	<figure>
+			<img src="ProCorrelation.PNG" alt="" width="100%"/>
+			<figcaption>
+				Abortion rate for women aged 15-19 (normalized by state population) is higher in Democratic (blue) states than Republican (red) states. State party was determined based on majority affiliation in the state senates. A total of 21 Democratic states and 29 Republican states are included (District of Columbia is included as a Democrat "state" and Nebraska was excluded as there was no senate majority party).
+			</figcaption>
+		
+		</figure>
+
+		<p>
+			Design Decisions and Rationale:
+		</p>
+
+		<ul>
+			<li>Added political party as a dimension to the data</li>
+				<ul>
+					<li>
+						Score: 1
+					</li>
+					<li>
+						Same reason as above for the PRO proposition visualization. It also really helped when sorting the data to immediately see which states are considered Democratic and which are Republican instead of having to identify it individually for each state.
+					</li>
+				</ul>
+			<li>Colored Marks by Political Party and Sorted Data</li>
+				<ul>
+					<li>
+						Score: 1.5
+					</li>
+					<li>
+						The color associations are the normal associations so it is easy for viewers to distinguish between Republican and Democratic states. The sorting also makes it easier to look at the data and understand the general trends in the data which just happens to support my proposition. I tried separating the visualization into a small multiple with one chart for democratic states and one chart for republican states, but thought the comparison was less direct and obvious than the sorted color bars.
+					</li>
+				</ul>
+			<li>Y-Axis Labeling and Caption</li>
+				<ul>
+					<li>
+						Score: 2
+					</li>
+					<li>
+						I defined how abortion rate is calculated and normalized in the y-axis. This makes the bars for each state more accurate relative to each other since states with larger populations will naturally have a larger number of abortions, but they will not have a larger abortion rate if we are normalizing by population. The caption also objectively describes the dataset and trend observed in the visualization. It also includes information about how DC was handled and why a state was filtered out. Since everything seems transparent and objective, the viewer is convinced that no malicious intent was part ofthis design and that the data and observations they make are correct.
+					</li>
+				</ul>
+		</ul>
+    </section>
+
+    <section>
+      <h2>Final Reflection</h2>
+
+      <p>
+		Being deceptive is suprisingly HARD. As I tried to come up with a proposition, I just kept thinking about how I could possibly use this data to argue against the trend that I am already seeing and against something that I know is True. I had to think hard about what dimensions, attributes, and axis step values I wanted to use to either hide or emphasize a certain trend for both the PRO and AGAINST visualizations. Making the AGAINST visualization was very straightforward in my case because I chose a proposition that was objectively false so the data already showed the correct trend. I just needed to emphasize it and word the caption and labels in a persuasive way. However, to make the PRO visualization, I went through almost all the measures before finding a combination that showed what I wanted, even though the combination doesn't really make sense to be graphed together from a logical standpoint.
+	  </p>
+
+	  <p>
+		I think any ethical/objective/"correct" visualization and anaysis is one that is immediately obvious from simple exploratory data analysis. If the visualization requires a lot of data manipulation, then that could be a sign that you are just trying to make the data confirm an already preconceived belief and applying confirmation bias on the visualization design. Additionally, for my PRO visualization, I had to be very careful about what information I revealed about my design process and data cleaning process because I knew the processes I used would immediately make anyone be suspicious of my visualization. This is definitely another sign that something is being intentionally misleading/deceptive. If you can't be transparent about what you are doing, then it is not something that should be done. 
+	  </p>
+
+	  <p>
+		Acceptable persuasive design choices would be ones that viewers know are intended as persuasive and letting themselves be persuaded anyways. For example, strong language, labeled annotations, and callouts are all things that the general viewer can most likely identify as a persuasive argument and are therefore acceptable. I think the distinction between "acceptable persuasive" and "misleading deception" is how comfortable a designer would be telling people about their design process and how they made the final visualization.
+	  </p>
+    </section>
+	</main>
+</body>
+</html>
